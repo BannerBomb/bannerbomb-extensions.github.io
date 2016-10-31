@@ -2,7 +2,7 @@
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
 <!-- This is the extension github_fix -->
   <app appid='bjgcjpdjpniffkobolbajejlbceopfhc'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/github_fix.crx' version='2.5' />
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/github_fix.crx' version='3.0' />
   </app>
   <!-- End Extension github_fix -->
   <!-- This is the extension ? -->
