@@ -2,13 +2,15 @@
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
 <!-- This is the extension github_fix -->
   <app appid='licfpdgbfbdfplbpfpeekppaiibnpnok'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/github_fix.crx' version='1.3.6.0' />
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/github_fix.crx' version='1.3.6.9' />
   </app>
   <!-- End Extension github_fix -->
-  <!-- This is the extension Update Notifier -->
-  <app appid='fmaaeaeplghocokfmacaflekedfnpkfc'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/update_notifier.crx' version='3.5' />
+  <!-- This is the extension ? -->
+  <!--
+  <app appid='?'>
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/?.crx' version='?' />
   </app>
+-->
   <!-- End Extension ? -->
 </gupdate>
 <!-- version='' -->
