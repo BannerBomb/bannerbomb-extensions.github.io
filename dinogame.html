@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html i18n-values="dir:textdirection;lang:language" dir="ltr" lang="en" i18n-processed=""><head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,
-                                 maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title i18n-content="title">www.google.com</title>
   <style>/* Copyright 2014 The Chromium Authors. All rights reserved.
    Use of this source code is governed by a BSD-style license that can be
@@ -4289,8 +4289,7 @@ function LoadTimeData() {}
    */
   function expect(condition, message) {
     if (!condition) {
-      console.error('Unexpected condition on ' + document.location.href + ': ' +
-                    message);
+      console.error('Unexpected condition on ' + document.location.href + ': ' + message);
     }
   }
 
@@ -4301,8 +4300,7 @@ function LoadTimeData() {}
    * @param {string} type The type we expect |value| to be.
    */
   function expectIsType(id, value, type) {
-    expect(typeof value == type, '[' + value + '] (' + id +
-                                 ') is not a ' + type);
+    expect(typeof value == type, '[' + value + '] (' + id + ') is not a ' + type);
   }
 
   expect(!loadTimeData, 'should only include this file once');
