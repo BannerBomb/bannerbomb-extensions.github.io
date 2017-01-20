@@ -7,7 +7,7 @@
   <!-- End Extension github_fix -->
   <!-- This is the extension Auto_Website_Unblock -->
   <app appid='cmllkpakhbfnjcbhnolkpblmaagfedcg'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Auto_Unblock_Websites.crx' version='1.5.0.5' />
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Auto_Unblock_Websites.crx' version='1.5.0.6' />
   </app>
   <!-- End Extension Auto_Website_Unblock -->
 </gupdate>
