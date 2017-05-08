@@ -10,10 +10,15 @@
     <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Auto_Unblock_Websites.crx' version='1.5.0.6' />
   </app>
   <!-- End Extension Auto_Website_Unblock -->
-  <!-- This is the extension Auto_Website_Unblock -->
+  <!-- This is the extension chrome snake -->
   <app appid='bpodhnnphklnegfmjmfgacnloedogldb'>
     <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/snake.crx' version='1.5.0.0' />
   </app>
-  <!-- End Extension Auto_Website_Unblock -->
+  <!-- End Extension chrome snake -->
+  <!-- This is the extension kahoot smasher -->
+  <app appid='bpodhnnphklnegfmjmfgacnloedogldb'>
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Kahoot_Smaher.crx' version='7.1' />
+  </app>
+  <!-- End Extension kahoot smasher -->
 </gupdate>
 <!-- version='' -->
