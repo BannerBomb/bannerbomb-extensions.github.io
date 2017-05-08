@@ -17,7 +17,7 @@
   <!-- End Extension chrome snake -->
   <!-- This is the extension kahoot smasher -->
   <app appid='icimeknapalhbeeaikpjmhigbbpianok'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Kahoot_Smaher.crx' version='7.1' />
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/Kahoot Smaher.crx' version='4.1' />
   </app>
   <!-- End Extension kahoot smasher -->
 </gupdate>
