@@ -12,7 +12,7 @@
   <!-- End Extension Auto_Website_Unblock -->
   <!-- This is the extension chrome snake -->
   <app appid='bpodhnnphklnegfmjmfgacnloedogldb'>
-    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/snake.crx' version='1.5.0.0' />
+    <updatecheck codebase='https://bannerbomb-extensions.github.io/extensions/snake.crx' version='1.5.0.2' />
   </app>
   <!-- End Extension chrome snake -->
   <!-- This is the extension kahoot smasher -->
