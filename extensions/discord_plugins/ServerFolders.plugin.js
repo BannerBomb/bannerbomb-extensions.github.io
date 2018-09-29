@@ -9,3 +9,5 @@ class ServerFolders extends DI.Structures.Plugin {
 		this.labels = {};
 	};
 };
+
+DI.PluginManager.load(ServerFolders);
