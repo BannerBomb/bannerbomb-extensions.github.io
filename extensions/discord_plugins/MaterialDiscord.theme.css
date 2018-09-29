@@ -7101,12 +7101,24 @@ body .Select-option:hover {
 	transition: 200ms ease;
 }
 
-.role-2irmRk button,
+/*.role-2irmRk button,
 .roleCircle-3xAZ1j,
 .roleCircleButton-377y0l {
 	width: 32px;
 	height: 32px;
 	margin: 0;
+	border-radius: 50% !important;
+	box-shadow: none !important;
+	cursor: auto;
+}*/
+
+.role-2irmRk button,
+.roleCircle-3xAZ1j,
+.roleCircleButton-377y0l {
+	width: 12px;
+	height: 12px;
+	margin-right: 4px;
+	/* margin: 0px; */
 	border-radius: 50% !important;
 	box-shadow: none !important;
 	cursor: auto;
