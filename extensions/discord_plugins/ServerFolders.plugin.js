@@ -2,11 +2,201 @@ class ServerFolders extends DI.Structures.Plugin {
 	constructor() {
 		super({
 			name: "ServerFolders",
-			version: "5.7.6",
+			version: "1.0.1",
 			author: "BannerBomb",
-			description: "Adds the feature to create folders to organize your servers. Right click a server > 'ServerFolders' > 'Create Server' to create a server. To add servers to a folder hold 'Ctrl' and drag the server onto the folder, this will add the server to the folderlist and hide it in the serverlist. To open  folder click the folder. A folder can only be opened when it has at least one server in it. To remove a server from a folder, open the folder and either right click the server > 'Serverfolders' > 'Remove Server from Folder' or hold 'Del' and click the server in the folderlist."
+			description: "Lets you use hashtags on Discord!"
 		}, `body{};`);
-		this.labels = {};
+		/* Build */
+
+	const buildPlugin = ([Plugin, Api]) => {
+		const { Toasts, Logger, DOMTools, WebpackModules, DiscordSelectors } = Api;
+		
+		return class HashTagsReborn extends Plugin {
+			constructor() {
+				super();
+				this._css;
+				this.regex = /\B#[A-Z0-9a-z_-]+/igm;
+				this.css = `
+					${DiscordSelectors.Messages.message.value.trim()} #HashTag {
+						color: #3898FF;
+						font-weight: bold;
+					}
+				`;
+				this.switchList = [
+					'app',
+					DiscordSelectors.TitleWrap.chat.value.slice(2),
+					WebpackModules.getByProps('messages', 'messagesWrapper').messagesWrapper
+				];
+				this.messageList = [
+					DiscordSelectors.Messages.container.value.slice(2),
+					DiscordSelectors.Messages.message.value.slice(2)
+				];
+			}
+
+			/* Methods */
+
+			onStart() {
+				this.handleCSS();
+				this.addTags();
+				Toasts.info(`${this.name} ${this.version} has started!`, { icon: true, timeout: 2e3 });
+			}
+
+			onStop() {
+				BdApi.clearCSS(this.short);
+				Toasts.info(`${this.name} ${this.version} has stopped!`, { icon: true, timeout: 2e3 });
+			}
+
+			handleCSS() {
+				const sheet = document.getElementById(this.short);
+
+				if (!sheet || !document.contains(sheet)) {
+					BdApi.injectCSS(this.short, this.css);
+				} else {
+					BdApi.clearCSS(this.short);
+					BdApi.injectCSS(this.short, this.css);
+				}
+			}
+
+			addTags() {
+				const messages = DOMTools.queryAll(`.${WebpackModules.getByProps('markup').markup}`);
+				for (let i = 0, len = messages.length; i < len; i++) {
+					const message = messages[i];
+					const matches = message.innerHTML.match(this.regex);
+					if (matches && matches.length) {
+						const html = message.innerHTML;
+						const index = html.indexOf('#');
+						if (index > 0) {
+							const pre = html[index - 1] === '/' ? true : false;
+							if (!pre) message.innerHTML = html.replace(this.regex, '<span id="HashTag">$&</span>');
+						} else {
+							message.innerHTML = html.replace(this.regex, '<span id="HashTag">$&</span>');
+						}
+					}
+				}
+			}
+
+			/* Observer */
+
+			observer({ addedNodes }) {
+				if (addedNodes.length && addedNodes[0].classList && this.switchList.includes(addedNodes[0].classList[0])) {
+					this.addTags();
+				} else if (addedNodes.length && addedNodes[0].classList && this.messageList.includes(addedNodes[0].classList[addedNodes[0].classList.length - 1])) {
+					this.addTags();
+				}
+			}
+
+			/* Setters */
+
+			set css(style = '') {
+				return this._css = style.split(/\s+/g).join(' ').trim();
+			}
+
+			/* Getters */
+
+			get [Symbol.toStringTag]() {
+				return 'Plugin';
+			}
+
+			get css() {
+				return this._css;
+			}
+
+			get name() {
+				return config.info.name;
+			}
+
+			get short() {
+				let string = '';
+
+				for (let i = 0, len = config.info.name.length; i < len; i++) {
+					const char = config.info.name[i];
+					if (char === char.toUpperCase()) string += char;
+				}
+
+				return string;
+			}
+
+			get author() {
+				return config.info.authors.map((author) => author.name).join(', ');
+			}
+
+			get version() {
+				return config.info.version;
+			}
+
+			get description() {
+				return config.info.description;
+			}
+		}
+	};
+
+	/* Finalize */
+
+	return !global.ZeresPluginLibrary 
+		? class {
+			getName() {
+				return this.name.replace(/\s+/g, '');
+			}
+
+			getAuthor() {
+				return this.author;
+			}
+
+			getVersion() {
+				return this.version;
+			}
+
+			getDescription() {
+				return this.description;
+			}
+
+			stop() {
+				Logger.log('Stopped!');
+			}
+
+			load() {
+				window.BdApi.alert('Missing Library', `The library plugin needed for ${config.info.name} is missing.<br /><br /> <a href="https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js">Click here to download the library!</a>`);
+			}
+
+			start() {
+				Logger.log('Started!');
+			}
+
+			/* Getters */
+
+			get [Symbol.toStringTag]() {
+				return 'Plugin';
+			}
+
+			get name() {
+				return config.info.name;
+			}
+
+			get short() {
+				let string = '';
+
+				for (let i = 0, len = config.info.name.length; i < len; i++) {
+					const char = config.info.name[i];
+					if (char === char.toUpperCase()) string += char;
+				}
+
+				return string;
+			}
+
+			get author() {
+				return config.info.authors.map((author) => author.name).join(', ');
+			}
+
+			get version() {
+				return config.info.version;
+			}
+
+			get description() {
+				return config.info.description;
+			}
+		}
+		: buildPlugin(global.ZeresPluginLibrary.buildPlugin(config));
+})();
 	};
 };
 
