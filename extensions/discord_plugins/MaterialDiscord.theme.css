@@ -7092,33 +7092,30 @@ body .Select-option:hover {
 
 .role-2irmRk {
 	position: relative;
-	min-width: 32px;
-	height: 32px;
-	padding: 0;
-	border-radius: 16px;
+	/* min-width: 32px; */
+	/* height: 32px; */
+	height: 22px;
+	/* padding: 0; */
+	padding: 4px;
+	/* border-radius: 16px; */
+	border-radius: 11px;
 	border: none;
 	background: var(--popout-color);
 	transition: 200ms ease;
 }
 
-/*.role-2irmRk button,
-.roleCircle-3xAZ1j,
-.roleCircleButton-377y0l {
-	width: 32px;
-	height: 32px;
-	margin: 0;
-	border-radius: 50% !important;
-	box-shadow: none !important;
-	cursor: auto;
-}*/
-
 .role-2irmRk button,
 .roleCircle-3xAZ1j,
 .roleCircleButton-377y0l {
+	/* width: 32px; */
+	/* height: 32px; */
+	/* margin: 0; */
+	/* border-radius: 50% !important; */
+	/* box-shadow: none !important; */
+	/* cursor: auto; */
 	width: 12px;
 	height: 12px;
 	margin-right: 4px;
-	/* margin: 0px; */
 	border-radius: 50% !important;
 	box-shadow: none !important;
 	cursor: auto;
