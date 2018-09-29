@@ -7128,7 +7128,7 @@ body .Select-option:hover {
 .roleRemoveIcon-2-TeGW {
 	position: relative;
 	width: 24px;
-	height: 24px;
+	/* height: 24px; */
 	display: block;
 	transition: 200ms ease all;
 	transform: scale(0.25);
