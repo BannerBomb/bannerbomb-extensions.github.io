@@ -30,6 +30,8 @@
 	--border-radius-bar: 3px;
 
 	--default-animation: cubic-bezier(0.4,0,0.2,1);
+	
+	--border: none; /* 1px solid; */
 }
 
 ::selection {
@@ -7096,10 +7098,13 @@ body .Select-option:hover {
 	/* height: 32px; */
 	height: 22px;
 	/* padding: 0; */
-	padding: 4px;
+	/* padding: 4px; */ /* Original Discord Padding */
+	padding: 6px;
 	/* border-radius: 16px; */
 	border-radius: 11px;
-	border: none;
+	/* border: none; */
+	border: --border;
+	border: 1px solid;
 	background: var(--popout-color);
 	transition: 200ms ease;
 }
