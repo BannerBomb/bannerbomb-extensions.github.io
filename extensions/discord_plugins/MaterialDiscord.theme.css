@@ -4745,14 +4745,21 @@ button[disabled],
 	stroke-width: 0 !important;
 }
 
+.icon-1R19_H[name="NotificationBell"] {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	transform: translate(0, 0) !important;
+}
+
 .icon-1R19_H[name="NotificationBell"] path {
 	d: path('M14,20A2,2 0 0,1 12,22A2,2 0 0,1 10,20H14M12,2A1,1 0 0,1 13,3V4.08C15.84,4.56 18,7.03 18,10V16L21,19H3L6,16V10C6,7.03 8.16,4.56 11,4.08V3A1,1 0 0,1 12,2Z') !important;
 }
 
 .icon-1R19_H[name="NotificationBellOff"] {
 	position: absolute !important;
-	top: -2px !important;
-	left: -3px !important;
+	top: 0 !important; /* -2px !important; */
+	left: 0 !important; /* -3px !important; */
 	transform: translate(0, 0) !important;
 }
 
