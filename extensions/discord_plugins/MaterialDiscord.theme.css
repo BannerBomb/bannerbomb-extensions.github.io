@@ -7103,8 +7103,7 @@ body .Select-option:hover {
 	/* border-radius: 16px; */
 	border-radius: 11px;
 	/* border: none; */
-	border: --border;
-	border: 1px solid;
+	border: var(--border);
 	background: var(--popout-color);
 	transition: 200ms ease;
 }
