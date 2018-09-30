@@ -3109,6 +3109,11 @@ button[disabled],
 	/*border-bottom: 2px solid #555 !important;*/
 }
 
+/* FRIENDS -> PENDING */
+#friends .friends-empty {
+	position: relative;
+}
+
 /* FRIENDS -> FRIENDS LIST */
 
 .privateChannels-1nO12o .channel-2QD9_O:first-child {
